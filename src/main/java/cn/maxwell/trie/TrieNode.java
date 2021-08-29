@@ -10,7 +10,8 @@ import java.util.HashMap;
  */
 @Data
 public final class TrieNode {
-    private Boolean isEnd;
+
+    private boolean isEnd;
     private TrieNode fail;
     private HashMap<Character, TrieNode> children;
 
