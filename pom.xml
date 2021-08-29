@@ -8,5 +8,30 @@
     <artifactId>SensitiveWordUtil</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <java-version>1.8</java-version>
+        <lombok-version>1.18.16</lombok-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>
