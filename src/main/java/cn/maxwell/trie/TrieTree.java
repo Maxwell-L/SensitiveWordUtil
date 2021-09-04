@@ -49,6 +49,29 @@ public class TrieTree {
             node.setEnd(true);
             size++;
         }
+        constructFailPointer();
+    }
+
+    public boolean isContainsBranch(String branch) {
+        if (StringUtils.isBlank(branch)) {
+            return false;
+        }
+        TrieNode node = root;
+        char[] wordsInBranch = branch.toCharArray();
+        for (char word : wordsInBranch) {
+            while (!node.getChildren().containsKey(word)
+                    && node != root) {
+                node = node.getFail();
+            }
+            node = node.getChildren().get(word);
+            if (node == null) {
+                node = root;
+            }
+            if (node.isEnd()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void constructFailPointer() {
